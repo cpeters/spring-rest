@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  
+  <pluginGroups>
+ 
+  </pluginGroups>
+
+  <proxies>
+    <proxy>
+      <id>optional</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>siproxy2</host>
+      <port>80</port>
+	  <username>sm0378</username>
+	  <password></password>
+     <nonProxyHosts>*localhost*|mizuho|*.us.mhfg|sa0465v.us.mhfg*</nonProxyHosts>
+    </proxy>   
+	<!--
+    <proxy>
+      <id>optional</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>ctproxy</host>
+      <port>80</port>
+     <nonProxyHosts>*localhost*|mizuho|*.us.mhfg|sa0465v.us.mhfg*</nonProxyHosts>
+    </proxy>
+   -->
+  </proxies>
+
+  <servers>
+  </servers>
+
+
+  <mirrors>
+   
+  </mirrors>
+
+  <profiles>
+  
+  
+	
+	<profile>
+      <id>nexus</id>
+     
+	  <activation>
+      <activeByDefault>true</activeByDefault>
+   </activation>
+      <repositories>
+		  	<repository>
+                <releases>
+                    <enabled>true</enabled>
+                </releases>
+                <snapshots>
+                    <enabled>true</enabled>
+                </snapshots>
+                <id>public</id>
+                <url>http://sa0465v.us.mhfg:8081/nexus/content/groups/public</url>
+            </repository>
+			
+			<repository>
+                <releases>
+                    <enabled>true</enabled>
+                </releases>
+                <snapshots>
+                    <enabled>false</enabled>
+                </snapshots>
+                <id>Mizuho-Releases</id>
+                <url>http://sa0465v.us.mhfg:8081/nexus/content/repositories/Mizuho-Releases</url>
+            </repository>
+						<repository>
+                <releases>
+                    <enabled>false</enabled>
+                </releases>
+                <snapshots>
+                    <enabled>true</enabled>
+                </snapshots>
+                <id>Mizuho-Snapshots</id>
+                <url>http://sa0465v.us.mhfg:8081/nexus/content/repositories/Mizuho-Snapshots</url>
+            </repository>
+			<repository>
+                <releases>
+                    <enabled>true</enabled>
+                </releases>
+                <snapshots>
+                    <enabled>true</enabled>
+                </snapshots>
+                <id>oss</id>
+                <url>http://sa0465v.us.mhfg:8081/nexus/content/repositories/oss</url>
+            </repository>
+			
+									<repository>
+                <releases>
+                    <enabled>true</enabled>
+                </releases>
+                <snapshots>
+                    <enabled>true</enabled>
+                </snapshots>
+                <id>thirdparty</id>
+                <url>http://sa0465v.us.mhfg:8081/nexus/content/repositories/thirdparty</url>
+            </repository>
+			<repository>
+          <id>central</id>
+          <url>http://insecure.repo1.maven.org/maven2</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+        </repository>
+			
+      </repositories>
+
+     <pluginRepositories>
+ <pluginRepository>
+          <id>central</id>
+          <url>http://insecure.repo1.maven.org/maven2</url>
+		 <snapshots>
+           <enabled>false</enabled>
+        </snapshots>
+          <releases>
+            <enabled>true</enabled>
+			 <updatePolicy>never</updatePolicy>
+          </releases>
+        </pluginRepository>
+      </pluginRepositories>
+
+    </profile>
+  </profiles>
+
+
+
+</settings>
